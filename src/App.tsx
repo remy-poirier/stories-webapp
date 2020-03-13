@@ -1,26 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Router, Switch } from "react-router";
+import { Provider } from "react-redux";
+import history from "utils/history";
+import { Store } from "redux";
+import { RootState } from "redux/reducer/mainReducer";
+import { configureStore } from "redux/store/configureStore";
+import Wrapper from "wrapper/Wrapper";
+import { AppRoutes } from "conf/routes";
+import { Route } from "react-router-dom";
+import "./App.css"
 
-function App() {
+const store: Store<RootState, any> = configureStore({});
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <Provider store={store}>
+      <Router history={history}>
+        <Wrapper>
+          <Switch>
+            {AppRoutes.map((route) => (
+              <Route
+                exact
+                path={route.path}
+                component={route.component}
+                key={route.path}
+              />
+            ))}
+          </Switch>
+        </Wrapper>
+      </Router>
+    </Provider>
+  )
+};
 
 export default App;

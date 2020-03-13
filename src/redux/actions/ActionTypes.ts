@@ -1,0 +1,23 @@
+export const ActionTypes = Object.freeze({
+  User: {
+    STATUS_UPDATE: "USER/STATUS_UPDATE",
+  },
+
+  Stories: {
+    RECEIVE_ALL: "STORIES/RECEIVE",
+    UPDATE:      "STORIES/UPDATE",
+    CREATE:      "STORIES/CREATE",
+  },
+
+  Conversation: {
+    RECEIVE:        "CONVERSATION/RECEIVE",
+    ADD_MESSAGE:    "CONVERSATION/ADD_MESSAGE",
+    DELETE_MESSAGE: "CONVERSATION/DELETE_MESSAGE",
+    UPDATE_MESSAGE: "CONVERSATION/UPDATE_MESSAGE",
+  },
+
+  Snackbar: {
+    SHOW: "SNACKBAR/SHOW_SNACKBAR",
+    HIDE: "SNACKBAR/HIDE_SNACKBAR",
+  },
+});

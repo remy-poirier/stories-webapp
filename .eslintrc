@@ -1,0 +1,47 @@
+{
+  "extends": [
+    "airbnb",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "plugins": ["react", "@typescript-eslint"],
+  "env": {
+    "browser": true,
+    "jasmine": true,
+    "jest": true
+  },
+  "rules": {
+    "no-console": "error",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-implicit-any": "off",
+    "@typescript-eslint/camelcase": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "react/jsx-filename-extension": [1, { "extensions":  [".jsx", ".tsx", ".ts"]}],
+    "react/jsx-one-expression-per-line": "off",
+    "react/state-in-constructor": "off",
+    "react/jsx-props-no-spreading": "off",
+    "import/no-unresolved": "off",
+    "linebreak-style": "off",
+    "quotes": "off",
+    "import/prefer-default-export": "off",
+    "eol-last": "off",
+    "key-spacing": ["error", {
+      "singleLine": {
+        "beforeColon": false,
+        "afterColon": true
+      },
+      "multiLine": {
+        "beforeColon": false,
+        "afterColon": true,
+        "align": "value"
+      }
+    }],
+    "max-len": ["error", { "code":  140 }]
+  },
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "detect"
+    }
+  },
+  "parser": "@typescript-eslint/parser"
+}
